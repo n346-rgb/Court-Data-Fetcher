@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Court-Data Fetcher</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
+    <h2 class="text-2xl font-bold text-center mb-6 text-blue-700">Court-Data Fetcher</h2>
+
+    <form action="/fetch" method="POST" class="space-y-4">
+
+      <!-- Case Type -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Case Type</label>
+        <select name="case_type" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <option value="">Select Type</option>
+          <option value="CS">Civil Suit (CS)</option>
+          <option value="CR">Criminal Revision (CR)</option>
+          <option value="CA">Civil Appeal (CA)</option>
+          <!-- Add more case types as needed -->
+        </select>
+      </div>
+
+      <!-- Case Number -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Case Number</label>
+        <input type="text" name="case_number" required placeholder="e.g. 1234"
+               class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <!-- Filing Year -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Filing Year</label>
+        <input type="text" name="filing_year" required placeholder="e.g. 2023"
+               class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <!-- Submit Button -->
+      <div class="pt-4">
+        <button type="submit"
+                class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-700 transition">
+          Fetch Case Details
+        </button>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
